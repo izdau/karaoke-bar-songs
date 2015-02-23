@@ -1,6 +1,9 @@
-node_modules
-dist
 .tmp
 .sass-cache
-bower_components
-.idea
+*.keystore
+*.sw*
+platforms
+www/dist
+www/vendor
+node_modules
+plugins
