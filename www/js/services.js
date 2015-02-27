@@ -17,14 +17,18 @@ angular.module('starter.services', [])
             }
         }
     }])
-    .factory('QueuedSongs', function ($http) {
-        var queuedSongs = [];
+    .factory('QueuedSongs', function (localStorageService) {
+        var queuedSongs = localStorageService.get('queuedSongs') || [];
+        console.log('queuedSongs:' + JSON.stringify(queuedSongs));
+
         return {
             addSong: function (song) {
-              queuedSongs.push(song);
+                queuedSongs.push(song);
+                localStorageService.set('queuedSongs', queuedSongs);
             },
             removeSong: function (song) {
                 queuedSongs.splice(queuedSongs.indexOf(song), 1);
+                localStorageService.set('queuedSongs', queuedSongs);
             },
             getAll: function () {
                 console.log('queuedSongs length: ' + queuedSongs.length);
@@ -36,6 +40,7 @@ angular.module('starter.services', [])
                         return queuedSongs[i];
                     }
                 }
+
                 return null;
             }
         }
