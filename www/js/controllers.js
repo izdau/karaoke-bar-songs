@@ -30,11 +30,12 @@ angular.module('starter.controllers', [])
         }
     })
     .controller('FiltersCtrl', function ($scope) {
+        $scope.foreignSong = false;
+        $scope.yearsSelected = 'Все года';
+        $scope.genreSelected = 'Все жанры';
     })
     .controller('FavoritesCtrl', function ($scope) {
-        $scope.settings = {
-            enableFriends: true
-        };
+
     })
     .controller('QueueCtrl', function ($scope, $ionicPopup, QueuedSongs) {
         $scope.queuedSongs = QueuedSongs.getAll();

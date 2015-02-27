@@ -1,28 +1,39 @@
 <ion-view view-title="Фильтры">
     <ion-content class="padding">
-        <div class="list card">
-            <div class="item item-divider">Recent Updates</div>
-            <div class="item item-body">
-                <div>
-                    There is a fire in <b>sector 3</b>
+        <ion-item class="item-toggle">
+            Зарубежная песня
+            <label class="toggle">
+                <input type="checkbox" ng-model="foreignSong">
+                <div class="track">
+                    <div class="handle"></div>
                 </div>
+            </label>
+        </ion-item>
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Года
             </div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">Health</div>
-            <div class="item item-body">
-                <div>
-                    You ate an apple today!
-                </div>
+            <select ng-model="yearsSelected">
+                <option>1980-1990</option>
+                <option>1991-2000</option>
+                <option>2001-2010</option>
+                <option>2011-2015</option>
+                <option>Все года</option>
+            </select>
+        </label>
+        <label class="item item-input item-select">
+            <div class="input-label">
+                Жанр
             </div>
-        </div>
-        <div class="list card">
-            <div class="item item-divider">Upcoming</div>
-            <div class="item item-body">
-                <div>
-                    You have <b>29</b> meetings on your calendar tomorrow.
-                </div>
-            </div>
-        </div>
+            <select ng-model="genreSelected">
+                <option>Pop</option>
+                <option>Rock</option>
+                <option>Soul</option>
+                <option>Funk</option>
+                <option>Latin</option>
+                <option>Schlager</option>
+                <option>Все жанры</option>
+            </select>
+        </label>
     </ion-content>
 </ion-view>
