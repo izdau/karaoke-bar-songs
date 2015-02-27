@@ -90,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             views: {
                 'tab-queue': {
                     templateUrl: 'templates/tab-queue.html',
-                    controller: 'FavoritesCtrl'
+                    controller: 'QueueCtrl'
                 }
             }
         });

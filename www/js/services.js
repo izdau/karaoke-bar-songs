@@ -4,7 +4,7 @@ angular.module('starter.services', [])
             getAll: function () {
                 var request = $http({
                     method: 'get',
-                    url: 'data/karaokeSongList.json'
+                    url: 'data/karaokeSongListMini.json'
                 });
 
                 return request.then(function (response) {
@@ -17,6 +17,29 @@ angular.module('starter.services', [])
             }
         }
     }])
+    .factory('QueuedSongs', function ($http) {
+        var queuedSongs = [];
+        return {
+            addSong: function (song) {
+              queuedSongs.push(song);
+            },
+            removeSong: function (song) {
+                queuedSongs.splice(queuedSongs.indexOf(song), 1);
+            },
+            getAll: function () {
+                console.log('queuedSongs length: ' + queuedSongs.length);
+                return queuedSongs;
+            },
+            getSong: function (songId) {
+                for (var i = 0; i < queuedSongs.length; i++) {
+                    if (queuedSongs[i].id === parseInt(songId)) {
+                        return queuedSongs[i];
+                    }
+                }
+                return null;
+            }
+        }
+    })
     .factory('Chats', function () {
         // Might use a resource here that returns a JSON array
 

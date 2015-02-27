@@ -1,7 +1,7 @@
 <ion-view view-title="Все песни">
     <ion-content>
         <ion-list>
-            <ion-item class="item" ng-repeat="song in songs" type="item-text-wrap">
+            <ion-item class="item" ng-repeat="song in songs" type="item-text-wrap" ng-click="addSongToQueue(song)">
                 <h2>{{song.title}}</h2>
                 <h3>{{song.artist}}</h3>
             </ion-item>
