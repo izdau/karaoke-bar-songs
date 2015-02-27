@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
     .controller('AllSongsCtrl', function ($scope, Songs, QueuedSongs) {
         $scope.songs = [];
+        $scope.searchString = '';
 
         // The Songs service returns a promise
         Songs.getAll().then(function (songs) {
