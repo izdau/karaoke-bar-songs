@@ -1,5 +1,5 @@
 angular.module('starter.controllers', [])
-    .controller('AllSongsCtrl', function ($scope, Songs, QueuedSongs) {
+    .controller('AllSongsCtrl', function ($scope, $ionicPopup, Songs, QueuedSongs) {
         $scope.songs = [];
         $scope.searchString = '';
 
@@ -10,8 +10,17 @@ angular.module('starter.controllers', [])
         });
 
         $scope.addSongToQueue = function (song) {
-            console.log('adding song to queue: ' + song.title);
-            QueuedSongs.addSong(song);
+            var confirmBox = $ionicPopup.confirm({
+                title: 'Добавить песню в очередь?'
+                //template: 'Добавить песню в очередь?'
+            });
+
+            confirmBox.then(function(response) {
+                if(response) {
+                    console.log('adding song to queue: ' + song.title);
+                    QueuedSongs.addSong(song);
+                }
+            });
         }
     })
     .controller('PopularCtrl', function ($scope, Chats) {
@@ -22,23 +31,24 @@ angular.module('starter.controllers', [])
     })
     .controller('FiltersCtrl', function ($scope) {
     })
-    .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
-        $scope.chat = Chats.get($stateParams.chatId);
-    })
-    .controller('FriendDetailCtrl', function ($scope, $stateParams, Songs) {
-        $scope.friend = Songs.get($stateParams.friendId);
-    })
     .controller('FavoritesCtrl', function ($scope) {
         $scope.settings = {
             enableFriends: true
         };
     })
-    .controller('QueueCtrl', function ($scope, QueuedSongs) {
+    .controller('QueueCtrl', function ($scope, $ionicPopup, QueuedSongs) {
         $scope.queuedSongs = QueuedSongs.getAll();
 
         $scope.removeSongFromQueue = function (song) {
-            QueuedSongs.removeSong(song);
+            var confirmBox = $ionicPopup.confirm({
+                title: 'Убрать песню с очереди?'
+                //template: 'Добавить песню в очередь?'
+            });
 
-            //$scope.queuedSongs = QueuedSongs.getAll();
+            confirmBox.then(function(response) {
+                if(response) {
+                    QueuedSongs.removeSong(song);
+                }
+            });
         }
     });

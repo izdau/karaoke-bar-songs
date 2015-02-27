@@ -52,16 +52,7 @@ angular.module('starter', ['ionic', 'LocalStorageModule', 'starter.controllers',
                 }
             }
         })
-        .state('tab.chat-detail', {
-            url: '/chats/:chatId',
-            views: {
-                'tab-popular': {
-                    templateUrl: 'templates/chat-detail.html',
-                    controller: 'ChatDetailCtrl'
-                }
-            }
-        })
-        .state('tab.friends', {
+        .state('tab.filters', {
             url: '/filters',
             views: {
                 'tab-filters': {
@@ -70,16 +61,7 @@ angular.module('starter', ['ionic', 'LocalStorageModule', 'starter.controllers',
                 }
             }
         })
-        .state('tab.friend-detail', {
-            url: '/friend/:friendId',
-            views: {
-                'tab-filters': {
-                    templateUrl: 'templates/friend-detail.html',
-                    controller: 'FriendDetailCtrl'
-                }
-            }
-        })
-        .state('tab.account', {
+        .state('tab.favorites', {
             url: '/favorites',
             views: {
                 'tab-favorites': {

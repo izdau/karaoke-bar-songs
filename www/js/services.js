@@ -10,10 +10,6 @@ angular.module('starter.services', [])
                 return request.then(function (response) {
                     return response.data;
                 });
-            },
-            get: function (friendId) {
-                // Simple index lookup
-                return {};
             }
         }
     }])
