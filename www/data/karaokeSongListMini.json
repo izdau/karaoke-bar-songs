@@ -1,0 +1,12 @@
+[
+{"id" : 1,"title" : "Uptown Funk","artist" : "Bruno Mars","year" : 2014,"genre" : ["Funk","Pop","Electro"]},
+{"id" : 2,"title" : "Thinking Out Loud","artist" : "Ed Sheeran","year" : 2014,"genre" : ["Pop","Folk"]},
+{"id" : 3,"title" : "All About That Bass","artist" : "Meghan Trainor","year" : 2014,"genre" : ["Pop","Soul"]},
+{"id" : 4,"title" : "All Of Me","artist" : "John Legend","year" : 2013,"genre" : ["Soul","Pop"]},
+{"id" : 5,"title" : "Stay With Me","artist" : "Sam Smith","year" : 2014,"genre" : ["Pop","Soul"]},
+{"id" : 6,"title" : "I'm Not The Only One","artist" : "Sam Smith","year" : 2014,"genre" : ["Pop","Soul"]},
+{"id" : 7,"title" : "Happy","artist" : "Pharrell Williams","year" : 2013,"genre" : ["Funk","Soul","Pop","TV & movie soundtrack"]},
+{"id" : 8,"title" : "Blank Space","artist" : "Taylor Swift","year" : 2014,"genre" : ["Pop"]},
+{"id" : 9,"title" : "Take Me To Church","artist" : "Hozier","year" : 2013,"genre" : ["Soul","Rock"]},
+{"id" : 10,"title" : "Shake It Off","artist" : "Taylor Swift","year" : 2014,"genre" : ["Pop"]}
+]

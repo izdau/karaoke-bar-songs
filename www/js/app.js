@@ -36,7 +36,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             views: {
                 'tab-all-songs': {
                     templateUrl: 'templates/tab-all-songs.html',
-                    controller: 'DashCtrl'
+                    controller: 'AllSongsCtrl'
                 }
             }
         })
@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             views: {
                 'tab-popular': {
                     templateUrl: 'templates/tab-popular.html',
-                    controller: 'ChatsCtrl'
+                    controller: 'PopularCtrl'
                 }
             }
         })
@@ -63,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             views: {
                 'tab-filters': {
                     templateUrl: 'templates/tab-filters.html',
-                    controller: 'FriendsCtrl'
+                    controller: 'FiltersCtrl'
                 }
             }
         })
@@ -81,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             views: {
                 'tab-favorites': {
                     templateUrl: 'templates/tab-favorites.html',
-                    controller: 'AccountCtrl'
+                    controller: 'FavoritesCtrl'
                 }
             }
         })
@@ -90,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             views: {
                 'tab-queue': {
                     templateUrl: 'templates/tab-queue.html',
-                    controller: 'AccountCtrl'
+                    controller: 'FavoritesCtrl'
                 }
             }
         });
