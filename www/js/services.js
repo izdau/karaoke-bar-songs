@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('karaokeBarSongs.services', [])
     .factory('Songs', ['$http', function ($http) {
         return {
             getAll: function () {
@@ -38,6 +38,18 @@ angular.module('starter.services', [])
                 }
 
                 return null;
+            }
+        }
+    })
+    .factory('Filters', function (localStorageService) {
+        return {
+            setFilter: function (filterKey, filterValue) {
+                var filterObject = localStorageService.get('filterObject') || {};
+                filterObject[filterKey] = filterValue;
+                localStorageService.set('filterObject', filterObject);
+            },
+            getFilterObject: function () {
+                return localStorageService.get('filterObject') || {};
             }
         }
     })
