@@ -4,8 +4,8 @@
 angular.module('karaokeBarSongs.filters', []).filter('karaokeFilter', function (Filters) {
     return function (karaokeSongs) {
         var filterObject = Filters.getFilterObject();
-        console.log('initial input object: '+ JSON.stringify(karaokeSongs));
-        console.log('genre selected: '+ filterObject.genreSelected);
+        //console.log('initial input object: '+ JSON.stringify(karaokeSongs));
+        //console.log('genre selected: '+ filterObject.genreSelected);
         var filteredKaraokeSongs = [];
 
         for (var i in karaokeSongs) {
@@ -19,7 +19,7 @@ angular.module('karaokeBarSongs.filters', []).filter('karaokeFilter', function (
             }
         }
 
-        console.log('after filter: '+ JSON.stringify(filteredKaraokeSongs));
+        //console.log('after filter: '+ JSON.stringify(filteredKaraokeSongs));
         return filteredKaraokeSongs;
     };
 });

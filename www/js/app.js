@@ -27,9 +27,17 @@ angular.module('karaokeBarSongsApp', ['ionic', 'LocalStorageModule', 'karaokeBar
         $ionicConfigProvider.tabs.position('bottom');
 
         // Ionic uses AngularUI Router which uses the concept of states
-        // Set up the various states which the app can be in.
-        // Each state's controller can be found in controllers.js
-        $stateProvider.state('tab', {
+        $stateProvider
+        //.state('tab.scan-qr-code', { // Each tab has its own nav history stack:
+        //    url: '/scan-qr-code',
+        //    views: {
+        //        'scan-qr-code': {
+        //            templateUrl: 'templates/scan-qr-code.html',
+        //            controller: 'ScanQrCodeCtrl'
+        //        }
+        //    }
+        //})
+        .state('tab', {
             url: "/tab",
             abstract: true,
             templateUrl: "templates/tabs.html"

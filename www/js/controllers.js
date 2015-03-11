@@ -1,23 +1,24 @@
 angular.module('karaokeBarSongs.controllers', [])
+    .controller('ScanQrCodeCtrl', function ($scope) {
+        console.log('scan-qr-code loaded');
+    })
     .controller('AllSongsCtrl', function ($scope, $ionicPopup, Songs, QueuedSongs) {
         $scope.songs = [];
         $scope.searchString = '';
 
         // The Songs service returns a promise
         Songs.getAll().then(function (songs) {
-            console.log('Success from http: ' + songs.length);
             $scope.songs = songs;
         });
 
         $scope.addSongToQueue = function (song) {
             var confirmBox = $ionicPopup.confirm({
                 title: 'Добавить песню в очередь?'
-                //template: 'Добавить песню в очередь?'
             });
 
-            confirmBox.then(function(response) {
-                if(response) {
-                    console.log('adding song to queue: ' + song.title);
+            confirmBox.then(function (response) {
+                if (response) {
+                    console.log('adding song to queue: ' + JSON.stringify(song));
                     QueuedSongs.addSong(song);
                 }
             });
@@ -30,7 +31,7 @@ angular.module('karaokeBarSongs.controllers', [])
         }
     })
     .controller('FiltersCtrl', function ($scope, Filters) {
-        $scope.yearOptions = ['Все года', '1980-1990', '1991-2000','2001-2010','2011-2015'];
+        $scope.yearOptions = ['Все года', '1980-1990', '1991-2000', '2001-2010', '2011-2015'];
         $scope.genreOptions = ['Pop', 'Rock', 'Soul', 'Funk', 'Latin', 'Schlager', 'Все жанры'];
 
         var filterObject = Filters.getFilterObject();
@@ -44,7 +45,7 @@ angular.module('karaokeBarSongs.controllers', [])
         }
     })
     .controller('FavoritesCtrl', function ($scope) {
-
+        console.log('Favorites tab loaded');
     })
     .controller('QueueCtrl', function ($scope, $ionicPopup, QueuedSongs) {
         $scope.queuedSongs = QueuedSongs.getAll();
@@ -55,8 +56,8 @@ angular.module('karaokeBarSongs.controllers', [])
                 //template: 'Добавить песню в очередь?'
             });
 
-            confirmBox.then(function(response) {
-                if(response) {
+            confirmBox.then(function (response) {
+                if (response) {
                     QueuedSongs.removeSong(song);
                 }
             });
