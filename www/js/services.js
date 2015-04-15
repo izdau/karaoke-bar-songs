@@ -4,7 +4,7 @@ angular.module('karaokeBarSongs.services', [])
             getAll: function () {
                 var request = $http({
                     method: 'get',
-                    url: 'data/karaokeSongListMini.json'
+                    url: 'data/karaokeSongList.json'
                 });
 
                 return request.then(function (response) {

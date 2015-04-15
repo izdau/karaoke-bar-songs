@@ -1,7 +1,41 @@
-[
-  {"id" : 1,"title" : "Uptown Funk","artist" : "Bruno Mars","year" : 2014,"genre" : ["Funk","Pop","Electro"]},
-  {"id" : 2,"title" : "Thinking Out Loud","artist" : "Ed Sheeran","year" : 2014,"genre" : ["Pop","Folk"]},
-  {"id" : 3,"title" : "All About That Bass","artist" : "Meghan Trainor","year" : 2014,"genre" : ["Pop","Soul"]},
-  {"id" : 4,"title" : "All Of Me","artist" : "John Legend","year" : 2013,"genre" : ["Soul","Pop"]},
-  {"id" : 5,"title" : "Stay With Me","artist" : "Sam Smith","year" : 2014,"genre" : ["Pop","Soul"]}
-]
+[{
+	"id": 1,
+	"title": "Uptown Funk",
+	"artist": "Bruno Mars",
+	"year": 2014,
+	"genre": ["Funk",
+	"Pop",
+	"Electro"]
+},
+{
+	"id": 2,
+	"title": "Thinking Out Loud",
+	"artist": "Ed Sheeran",
+	"year": 2014,
+	"genre": ["Pop",
+	"Folk"]
+},
+{
+	"id": 3,
+	"title": "All About That Bass",
+	"artist": "Meghan Trainor",
+	"year": 2014,
+	"genre": ["Pop",
+	"Soul"]
+},
+{
+	"id": 4,
+	"title": "All Of Me",
+	"artist": "John Legend",
+	"year": 2013,
+	"genre": ["Soul",
+	"Pop"]
+},
+{
+	"id": 5,
+	"title": "Stay With Me",
+	"artist": "Sam Smith",
+	"year": 2014,
+	"genre": ["Pop",
+	"Soul"]
+}]
