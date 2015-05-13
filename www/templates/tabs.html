@@ -4,14 +4,14 @@ Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
-    <!-- All Songs Tab -->
-    <ion-tab title="Все песни" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/all-songs">
-        <ion-nav-view name="tab-all-songs"></ion-nav-view>
-    </ion-tab>
-
     <!-- Popular Tab -->
     <ion-tab title="Популярные" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab/popular">
         <ion-nav-view name="tab-popular"></ion-nav-view>
+    </ion-tab>
+
+    <!-- All Songs Tab -->
+    <ion-tab title="Все песни" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/all-songs">
+        <ion-nav-view name="tab-all-songs"></ion-nav-view>
     </ion-tab>
 
     <!-- Filters Tab -->

@@ -24,10 +24,19 @@ angular.module('karaokeBarSongs.controllers', [])
             });
         }
     })
-    .controller('PopularCtrl', function ($scope, Chats) {
-        $scope.chats = Chats.all();
-        $scope.remove = function (chat) {
-            Chats.remove(chat);
+    .controller('PopularCtrl', function ($scope, $cordovaBarcodeScanner) {
+        $scope.qrCodeText = 'Currently unscanned';
+        $scope.scanQRCode = function () {
+            console.log('scanning QR ...');
+            $cordovaBarcodeScanner.scan().then(function(imageData) {
+                console.log(imageData.text);
+                $scope.qrCodeText = imageData.text;
+                console.log("Barcode Format -> " + imageData.format);
+                console.log("Cancelled -> " + imageData.cancelled);
+            }, function(error) {
+                console.log("An error happened -> " + error);
+                $scope.qrCodeText = 'Error happened during scanning';
+            });
         }
     })
     .controller('FiltersCtrl', function ($scope, Filters) {

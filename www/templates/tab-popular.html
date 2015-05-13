@@ -1,6 +1,12 @@
 <ion-view view-title="Популярные">
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="scanQRCode()">
+            Scan QR
+        </button>
+    </ion-nav-buttons>
     <ion-content>
-        <ion-list>
-        </ion-list>
+        <p>{{qrCodeText}}</p>
+        <!--<ion-list>
+        </ion-list>-->
     </ion-content>
 </ion-view>
