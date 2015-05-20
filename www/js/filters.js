@@ -1,25 +1,17 @@
 /**
  * Created by Baurzhan on 2/28/2015.
  */
-angular.module('karaokeBarSongs.filters', []).filter('karaokeFilter', function (Filters) {
-    return function (karaokeSongs) {
-        var filterObject = Filters.getFilterObject();
-        //console.log('initial input object: '+ JSON.stringify(karaokeSongs));
-        //console.log('genre selected: '+ filterObject.genreSelected);
-        var filteredKaraokeSongs = [];
-
-        for (var i in karaokeSongs) {
-            // Apply genre filter
-            var genreFilter = filterObject.genreSelected || '';
-            if (genreFilter !== '') {
-
-                if (karaokeSongs[i].genre.indexOf(genreFilter) !== -1) {
-                    filteredKaraokeSongs.push(karaokeSongs[i]);
-                }
+angular.module('karaokeBarSongs.filters', [])
+    .filter('allSongsFilter', function (filterFilter) {
+        return function (karaokeSongs, searchType, searchString) {
+            console.log('searchType: ' + searchType + ', searchString: ' + searchString);
+            var filteredKaraokeSongs = [];
+            if (searchType === 'artist') {
+                filteredKaraokeSongs = filterFilter(karaokeSongs, {artist:searchString});
+            } else if (searchType === 'song') {
+                filteredKaraokeSongs = filterFilter(karaokeSongs, {songName:searchString});
             }
-        }
 
-        //console.log('after filter: '+ JSON.stringify(filteredKaraokeSongs));
-        return filteredKaraokeSongs;
-    };
+            return filteredKaraokeSongs;
+        };
 });

@@ -1,14 +1,26 @@
 <ion-view view-title="Все песни">
+    <ion-nav-buttons side="right">
+        <button class="button button-positive" ng-click="scanQRCode()">
+            Скан QR
+        </button>
+    </ion-nav-buttons>
     <ion-content>
         <ion-list can-swipe="true">
-            <label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="Search" ng-model="searchString">
-            </label>
-            <!--<ion-item class="item" ng-repeat="song in songs | karaokeFilter | filter:searchString as results" type="item-text-wrap" ng-click="addSongToQueue(song)">-->
-            <ion-item class="item" collection-repeat="song in songs | filter:searchString" type="item-text-wrap" ng-click="addSongToQueue(song)">
-                <h2>{{song.title}}</h2>
-                <h3>{{song.artist}}</h3>
+            <p></p>
+            <div class="button-bar">
+                <a class="button button-small button-positive" ng-class="{'button-outline' : searchType != 'artist'}" ng-click="setSearchType('artist')">По артисту</a>
+                <a class="button button-small button-positive" ng-class="{'button-outline' : searchType != 'song'}" ng-click="setSearchType('song')">По названию</a>
+            </div>
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search" ng-model="searchString">
+                </label>
+            </div>
+
+            <ion-item class="item" collection-repeat="song in songs | allSongsFilter: searchType:searchString | orderBy: 'artist'" type="item-text-wrap" ng-click="addSongToQueue(song)">
+                <h3>{{song.songName}}<h3>
+                <h4>{{song.artist}}</h4>
             </ion-item>
         </ion-list>
     </ion-content>

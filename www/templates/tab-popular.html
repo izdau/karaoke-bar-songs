@@ -1,12 +1,26 @@
 <ion-view view-title="Популярные">
     <ion-nav-buttons side="right">
-        <button class="button" ng-click="scanQRCode()">
-            Scan QR
+        <button class="button button-positive" ng-click="scanQRCode()">
+            Скан QR
         </button>
     </ion-nav-buttons>
     <ion-content>
+        <p></p>
+        <div class="button-bar">
+            <a class="button button-small button-positive" ng-class="{'button-outline' : popularType != 'all'}" ng-click="setPopularType('all')">Всегда</a>
+            <a class="button button-small button-positive" ng-class="{'button-outline' : popularType != 'year'}" ng-click="setPopularType('year')">Год</a>
+            <a class="button button-small button-positive" ng-class="{'button-outline' : popularType != 'month'}" ng-click="setPopularType('month')">Месяц</a>
+            <a class="button button-small button-positive" ng-class="{'button-outline' : popularType != 'week'}" ng-click="setPopularType('week')">Неделя</a>
+        </div>
+        <p></p>
+
+        <ion-list can-swipe="true">
+            <ion-item class="item" collection-repeat="popularSong in popularSongs | filter: {popularType: popularType}" type="item-text-wrap" ng-click="addSongToQueue(popularSong)">
+                <h3>{{popularSong.songName}}</h3>
+                <h4>{{popularSong.artist}}</h4>
+            </ion-item>
+        </ion-list>
+
         <p>{{qrCodeText}}</p>
-        <!--<ion-list>
-        </ion-list>-->
     </ion-content>
 </ion-view>
